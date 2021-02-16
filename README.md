@@ -33,7 +33,7 @@ az k8sconfiguration create -g edge-rg \
     --operator-namespace common \
     --operator-type flux \
     --operator-params "'--git-readonly --git-path gitops/common'" \
-    --repository-url https://github.com/tkubica12/edge-k2s-arc \
+    --repository-url https://github.com/tkubica12/edge-k3s-arc \
     --enable-helm-operator  \
     --helm-operator-version 1.2.0 \
     --scope namespace \
