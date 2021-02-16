@@ -23,10 +23,10 @@ terraform apply -auto-approve
 # Onboard devices for GitOps
 
 ```bash
-az extension add k8sconfiguration --update
+az extension add --name k8sconfiguration --upgrade
 # Onboard to common state
 az k8sconfiguration create -g edge-rg \
-    --cluster-name k3s-1 \
+    --cluster-name k3s-0 \
     --cluster-type connectedClusters \
     --name common \
     --operator-instance-name common  \
