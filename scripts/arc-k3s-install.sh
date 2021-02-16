@@ -41,7 +41,6 @@ export clusterId=$(az connectedk8s show --name $8 --resource-group $7 --query id
 
 # Install Azure Monitor for Containers
 curl -o enable-monitoring.sh -L https://aka.ms/enable-monitoring-bash-script
-sed -i 's/2.7.8/2.7.6/g' enable-monitoring.sh # Temp workaround - downgrade
 bash enable-monitoring.sh --resource-id $clusterId --client-id $1 --client-secret $2  --tenant-id $3 --workspace-id $6 
 
 # Install Azure Policy
