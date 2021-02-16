@@ -16,4 +16,6 @@ cd infra
 # export TF_VAR_tenant_id=<tenantId>
 
 . .secrets
+
+terraform apply -auto-approve
 ```

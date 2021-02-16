@@ -62,7 +62,7 @@ SETTINGS
 
   protected_settings = <<PROTECTEDSETTINGS
     {
-        "commandToExecute": "./arc-k3s-install.sh ${var.client_id} ${var.client_secret} ${var.tenant_id} ${azurerm_log_analytics_workspace.arc.workspace_id} ${azurerm_log_analytics_workspace.arc.primary_shared_key} ${azurerm_log_analytics_workspace.arc.id} ${azurerm_resource_group.edge.name}"
+        "commandToExecute": "./arc-k3s-install.sh ${var.client_id} ${var.client_secret} ${var.tenant_id} ${azurerm_log_analytics_workspace.arc.workspace_id} ${azurerm_log_analytics_workspace.arc.primary_shared_key} ${azurerm_log_analytics_workspace.arc.id} ${azurerm_resource_group.edge.name} k3s-${count.index}"
     }
 PROTECTEDSETTINGS
 

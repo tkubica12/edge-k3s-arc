@@ -7,6 +7,7 @@ echo        -> log workspace secret
 echo        -> log workspace id
 echo        -> log workspace resource id
 echo        -> resource group name
+echo        -> cluster name
 echo
 
 # sudo -i
@@ -35,8 +36,8 @@ az extension add --name k8sconfiguration
 az login --service-principal -u $1 -p $2 --tenant $3
 
 # Onboard cluster to Arc
-az connectedk8s connect --name tomas-k3s --resource-group $7 --tags logAnalyticsWorkspaceResourceId=$6 --location westeurope
-export clusterId=$(az connectedk8s show --name tomas-k3s --resource-group $7 --query id -o tsv)
+az connectedk8s connect --name $8 --resource-group $7 --tags logAnalyticsWorkspaceResourceId=$6 --location westeurope
+export clusterId=$(az connectedk8s show --name $8 --resource-group $7 --query id -o tsv)
 
 # Install Azure Monitor for Containers
 curl -o enable-monitoring.sh -L https://aka.ms/enable-monitoring-bash-script
