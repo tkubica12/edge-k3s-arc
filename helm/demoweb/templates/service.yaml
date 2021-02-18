@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: myweb-service-ext-public
+  name: myweb-service
 spec:
   selector:
     app: myweb
