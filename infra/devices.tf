@@ -3,6 +3,14 @@ variable "amount" {
   default = 5
 }
 
+resource "azurerm_public_ip" "k3s" {
+  count               = var.amount
+  name                = "k3s-ip-${count.index}"
+  resource_group_name = azurerm_resource_group.edge.name
+  location            = azurerm_resource_group.edge.location
+  allocation_method   = "Dynamic"
+}
+
 resource "azurerm_network_interface" "k3s" {
   count               = var.amount
   name                = "k3s-nic-${count.index}"
@@ -13,6 +21,7 @@ resource "azurerm_network_interface" "k3s" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.edge.id
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = azurerm_public_ip.k3s[count.index].id
   }
 }
 
