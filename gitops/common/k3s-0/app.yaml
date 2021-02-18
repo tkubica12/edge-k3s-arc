@@ -7,3 +7,6 @@ spec:
     git: https://github.com/tkubica12/edge-k3s-arc
     ref: master
     path: helm/demoweb
+  values:
+    version: "1"
+    info: k3s-0
