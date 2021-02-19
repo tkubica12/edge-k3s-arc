@@ -29,7 +29,7 @@ resource "random_string" "suffix" {
 
 # Resource Group
 resource "azurerm_resource_group" "edge" {
-  name     = "edge-rg"
+  name     = "k3s-rg"
   location = "westeurope"
 }
 
