@@ -8,5 +8,5 @@ spec:
     ref: master
     path: helm/demoweb
   values:
-    version: "1"
+    version: "2"
     info: k3s-0
