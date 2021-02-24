@@ -18,6 +18,11 @@ provider "azurerm" {
   features {}
 }
 
+#random provider
+provider "random" {
+  version = "~> 3.0"
+}
+
 # Pseudorandom prefix
 resource "random_string" "suffix" {
   length  = 8
